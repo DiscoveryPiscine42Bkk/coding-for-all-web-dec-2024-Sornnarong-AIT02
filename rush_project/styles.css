@@ -1,0 +1,245 @@
+/* ตั้งค่าพื้นฐานสำหรับ body */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* ตั้งค่าสำหรับ navigation */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed; /* ตำแหน่งคงที่ */
+    top: 0; /* ติดอยู่ด้านบน */
+    left: 0; /* ติดอยู่ด้านซ้าย */
+    width: 95%; /* ใช้ความกว้างเต็มจอ */
+    z-index: 1000; /* วางอยู่เหนือองค์ประกอบอื่น */
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #666;
+    text-decoration: underline;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* จัดการ profiles-container */
+  #profiles-container {
+    display: flex;
+    flex-direction: column; /* เรียงโปรไฟล์ในแนวตั้ง */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวนอน */
+    justify-content: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    min-height: 100vh; /* ใช้ความสูงเต็มจอ */
+    gap: 50px; /* ระยะห่างระหว่างโปรไฟล์ */
+    background-color: #f9f9f9;
+  }
+  
+  /* ตั้งค่ารูปแบบแต่ละโปรไฟล์ */
+  #profile, #profile-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%; /* ขยายให้เต็ม container */
+  }
+  
+  /* ตั้งค่ารูปภาพโปรไฟล์ */
+  .section__pic-container img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ตั้งค่าข้อความ */
+  .section__text {
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  .section__text__p1 {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 20px 0 -20px;
+    
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin: 20px 0 -20px;
+    color: #000;
+  }
+  
+  .section__text__p2 {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: #333;
+    
+  }
+  
+  /* ตั้งค่าปุ่ม */
+  .btn-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    border: 2px solid #333;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .btn-color-1 {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .btn-color-1:hover {
+    background-color: #444;
+  }
+  
+  .btn-color-2 {
+    background-color: transparent;
+    color: #333;
+  }
+  
+  .btn-color-2:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  #profiles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    max-width: 800px;
+    margin: +50px auto 0 auto;
+  }
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Media Queries สำหรับหน้าจอที่เล็กลง */
+  
+  /* แท็บเล็ต (หน้าจอขนาดเล็กถึงกลาง) */
+  @media (max-width: 1024px) {
+    #profiles-container {
+      padding: 20px;
+      gap: 30px; /* ลดช่องว่างระหว่างโปรไฟล์ */
+    }
+  
+    #profile, #profile-2 {
+      flex-direction: column; /* เปลี่ยนการจัดโปรไฟล์จากแนวนอนเป็นแนวตั้ง */
+      gap: 20px; /* ลดช่องว่างระหว่างรูปภาพและข้อความ */
+      padding: 20px; /* ลดระยะขอบภายใน */
+    }
+  
+    .section__pic-container img {
+      width: 200px;
+      height: 200px; /* ลดขนาดรูปภาพ */
+    }
+  
+    .section__text {
+      text-align: center; /* จัดข้อความให้อยู่กลาง */
+    }
+  
+    .title {
+      font-size: 2rem; /* ลดขนาดหัวข้อ */
+    }
+  
+    .section__text__p2 {
+      font-size: 1.2rem; /* ลดขนาดฟอนต์ข้อความ */
+    }
+  
+    .btn-container {
+      flex-direction: column; /* ปุ่มเรียงในแนวตั้ง */
+      gap: 10px; /* ลดช่องว่างระหว่างปุ่ม */
+    }
+  
+    .btn {
+      width: 100%; /* ให้ปุ่มยืดเต็มความกว้าง */
+      padding: 8px; /* ลดขนาดปุ่ม */
+    }
+  }
+  
+  /* มือถือ (หน้าจอขนาดเล็กมาก) */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column; /* เมนูจัดเป็นแนวตั้ง */
+      align-items: center; /* จัดให้อยู่ตรงกลาง */
+      padding: 10px 20px; /* ลด padding */
+    }
+  
+    .nav-links {
+      flex-direction: column; /* ลิงก์เรียงในแนวตั้ง */
+      gap: 10px; /* ลดระยะห่าง */
+    }
+  
+    #profiles-container {
+      gap: 20px; /* ลดช่องว่างระหว่างโปรไฟล์ */
+    }
+  
+    .section__pic-container img {
+      width: 150px; /* ลดขนาดรูปภาพเพิ่มเติม */
+      height: 150px;
+    }
+  
+    .title {
+      font-size: 1.8rem; /* ลดขนาดหัวข้อ */
+    }
+  
+    .section__text__p2 {
+      font-size: 1rem; /* ลดขนาดข้อความ */
+    }
+  
+    .btn-container {
+      gap: 8px; /* ลดช่องว่างระหว่างปุ่ม */
+    }
+  
+    .btn {
+      padding: 6px 10px; /* ลดขนาดปุ่ม */
+      font-size: 0.9rem; /* ลดฟอนต์ปุ่ม */
+    }
+  }

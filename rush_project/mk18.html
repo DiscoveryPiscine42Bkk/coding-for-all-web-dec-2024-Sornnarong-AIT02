@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .product-details {
+      margin-top: 30px;
+    }
+    .product-image {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .thumbnail {
+      cursor: pointer;
+      max-width: 80px;
+      border: 2px solid transparent;
+    }
+    .thumbnail:hover, .thumbnail.active {
+      border-color: #007bff;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(255, 255, 255);
+    }
+    .carousel-item img {
+        height: 80vh;
+        object-fit: cover;
+    }
+    .navbar {
+        background-color: rgb(36, 36, 36) !important;
+        margin-bottom: 20px;
+    }
+    .navbar-brand {
+        color: white !important;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .nav-link {
+        cursor: pointer;
+        color: grey !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="main_page.html">SixNatics Airsoft</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">About Me.</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <!-- Product Details -->
+  <div class="container product-details">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <img id="mainImage" src="C:\Users\123\Desktop\rush web\pic\cm.jpg"alt="Product Image" class="product-image mb-3">
+        <div class="d-flex justify-content-center gap-2">
+          <img src="C:\Users\123\Desktop\rush web\pic\mk01.jpg"alt="Thumbnail 1" class="thumbnail active">
+          <img src="C:\Users\123\Desktop\rush web\pic\mk02.jpg"alt="Thumbnail 2" class="thumbnail">
+          <img src="C:\Users\123\Desktop\rush web\pic\mk03.jpg"alt="Thumbnail 3" class="thumbnail">
+          <img src="C:\Users\123\Desktop\rush web\pic\mk04.jpg"lt="Thumbnail 4" class="thumbnail">
+          <img src="C:\Users\123\Desktop\rush web\pic\mk05.jpg"alt="Thumbnail 5" class="thumbnail">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2>Tokyo Marui MK18 MOD.1 GBBR</h2>
+        <h3 class="text-success">21,900.00 บาท</h3>
+        <p>- ระบบ : แก๊ส
+        <p>- ลำกล้อง : 10.9 นิ้ว
+        <p>- น้ำหนัก : 2,960 g
+        <p>- ความเร็ว : 350 fps
+        <p>- แม็กกาซีนบรรจุ : 35+1
+        <p>- Blowback : มี
+        <p>- Hopup : มีและปรับได้
+        <p>- ขนาดลูกกระสุน : 6 mm
+        </p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.thumbnail').on('click', function () {
+        $('.thumbnail').removeClass('active');
+        $(this).addClass('active');
+        const newSrc = $(this).attr('src');
+        $('#mainImage').attr('src', newSrc);
+      });
+
+      $('.btn-primary').on('click', function () {
+        alert('Item added to cart!');
+      });
+    });
+  </script>
+</body>
+</html>
