@@ -40,7 +40,7 @@
             $("#ft_list div").each(function() {
                 toDoArray.push($(this).text());
             });
-            document.cookie = "todo=" + encodeURIComponent(JSON.stringify(toDoArray)) + ";path=/";
+            document.cookie = "todo=" + encodeURIComponent(JSON.stringify(toDoArray)) + ";expires=" + expireDate.toUTCString() + ";path=/";
         }
 
         // Load To-Do List from Cookies
