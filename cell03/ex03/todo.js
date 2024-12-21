@@ -25,18 +25,21 @@ function deleteToDo(toDoDiv) {
     }
 }
 
-
 function saveToDo() {
     const list = document.querySelectorAll("#ft_list div");
     const toDoArray = [];
     list.forEach(item => toDoArray.push(item.textContent));
-    document.cookie = "todo=" + JSON.stringify(toDoArray) + ";path=/";
+    localStorage.setItem("todo", JSON.stringify(toDoArray));
 }
 
 function loadToDo() {
-    const cookie = document.cookie.split("; ").find(row => row.startsWith("todo="));
-    if (cookie) {
-        const toDoArray = JSON.parse(cookie.split("=")[1]);
-        toDoArray.forEach(item => addToDo(item));
+    const savedToDo = localStorage.getItem("todo");
+    if (savedToDo) {
+        try {
+            const toDoArray = JSON.parse(savedToDo);
+            toDoArray.forEach(item => addToDo(item));
+        } catch (error) {
+            console.error("Error parsing todo data from LocalStorage:", error);
+        }
     }
 }
